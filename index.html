@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chai Time - AI-Powered Therapy Game</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #fafafa;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav li {
+            margin-left: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        /* Updated Hero Section with Rounded Icon */
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+        .hero-icon {
+            width: 100%;
+            max-width: 500px; /* Ensure it never exceeds 500px */
+            height: auto;
+            border-radius: 20px; /* Make the icon corners curved */
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .mission {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .mission h3 {
+            margin-top: 0;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .feature {
+            flex: 1 1 300px;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .feature h4 {
+            margin-top: 0;
+        }
+        .confidential {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Chai Time</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#confidential">Confidentiality</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <!-- 500x500 Icon Placeholder -->
+        <img src="Logo.jpg" alt="Chai Time Icon" class="hero-icon" />
+        <h2>Welcome to Chai Time</h2>
+        <p>An AI-driven virtual therapy experience in a cozy café setting.</p>
+    </section>
+
+    <div class="container">
+        <!-- Mission Statement -->
+        <section class="mission" id="mission">
+            <h3>Our Mission</h3>
+            <p>
+                At <strong>Chai Time</strong>, our mission is to break down traditional therapy barriers such as cost and stigma
+                by offering a fun, user-friendly, AI-powered environment where people can engage in meaningful conversations
+                with our friendly panda barista, all at minimal or no cost.
+            </p>
+            <!-- Mission Statement Template -->
+            <p><em>"[Insert personalized statement here about how your cafe fosters well-being and empowerment]"</em></p>
+        </section>
+
+        <!-- Key Features -->
+        <section class="features" id="features">
+            <!-- Feature 1: AI-driven therapy -->
+            <div class="feature">
+                <h4>AI-driven Virtual Therapy</h4>
+                <p>Interact with our panda barista in a dynamic, conversational game to help manage anxiety and improve mood.</p>
+            </div>
+            <!-- Feature 2: Conversation Confidentiality -->
+            <div class="feature">
+                <h4>Confidential Conversations</h4>
+                <p>Rest assured, all chats remain private and are not stored in any database.</p>
+            </div>
+            <!-- Feature 3: Free up to a certain usage -->
+            <div class="feature">
+                <h4>Free Tier</h4>
+                <p>Enjoy the core features at no cost up to a certain usage limit. Affordable premium plans are available for
+                   extended features and more in-depth sessions.</p>
+            </div>
+            <!-- Feature 4: Breaking Down Therapy Barriers -->
+            <div class="feature">
+                <h4>Accessible, Stigma-Free Therapy</h4>
+                <p>We aim to reduce barriers like cost, stigma, and geographic limitations by providing immediate, on-demand
+                   help in a welcoming, game-like setting.</p>
+            </div>
+        </section>
+
+        <!-- Confidentiality Info -->
+        <section class="confidential" id="confidential">
+            <h3>Privacy & Confidentiality</h3>
+            <p>
+                Chai Time prioritizes user privacy. We do not store or log your conversations on any database. This helps ensure
+                that your interactions remain completely confidential and secure.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Chai Time. All rights reserved.</p>
+    </footer>
+</body>
+</html>
