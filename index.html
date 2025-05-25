@@ -2,118 +2,391 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chai Time - AI-Powered Therapy Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Cozy Cafe Color Palette */
+        /* Modern Cozy Cafe Design with Pixel Art Warmth */
+        :root {
+            --primary-bg: #FFF8F2;
+            --secondary-bg: #E9DAC6;
+            --hero-bg: #FAE8D1;
+            --text-primary: #5B4636;
+            --text-secondary: #8B6F5B;
+            --accent-color: #D4A574;
+            --white-warm: #FEFCF9;
+            --shadow-light: rgba(91, 70, 54, 0.1);
+            --shadow-medium: rgba(91, 70, 54, 0.15);
+            --gradient-warm: linear-gradient(135deg, #FAE8D1 0%, #E9DAC6 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #FFF8F2; /* Light, warm background color */
-            color: #5B4636; /* Soft brown text color */
-        }
-        header {
-            background-color: #E9DAC6; /* Warm beige */
-            padding: 1rem;
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }        header {
+            background: var(--gradient-warm);
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px var(--shadow-light);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
         }
+        
+        header:hover {
+            box-shadow: 0 6px 30px var(--shadow-medium);
+        }
+        
         header h1 {
             margin: 0;
-            font-size: 1.5rem;
-            color: #5B4636;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-shadow: 0 2px 4px var(--shadow-light);
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
+        
+        header h1:hover {
+            transform: scale(1.05);
+        }
+        
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
+            gap: 0.5rem;
         }
+        
         nav li {
-            margin-left: 1rem;
-        }
-        nav a {
+            position: relative;
+        }        nav a {
             text-decoration: none;
-            color: #5B4636;
+            color: var(--text-primary);
+            font-weight: 600;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            transition: all 0.25s ease;
+            position: relative;
+            display: inline-block;
         }
-        /* Hero Section */
+        
+        nav a:hover {
+            background: var(--white-warm);
+            box-shadow: 0 4px 15px var(--shadow-medium);
+            transform: translateY(-2px);
+            color: var(--text-primary);
+        }
+        
+        nav a:active {
+            transform: translateY(0);
+        }/* Hero Section */
         .hero {
-            background-color: #FAE8D1; /* Light peach background for hero */
-            padding: 2rem;
+            background: var(--gradient-warm);
+            padding: 4rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 1rem;
+            gap: 2rem;
+            min-height: 80vh;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(233, 218, 198, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .hero-icon {
             width: 100%;
-            max-width: 500px; /* Ensure it never exceeds 500px */
+            max-width: 400px;
             height: auto;
-            border-radius: 20px; /* Make the icon corners curved */
+            border-radius: 30px;
+            box-shadow: 0 10px 40px var(--shadow-medium);
+            transition: all 0.4s ease;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
         }
+        
+        .hero-icon:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 50px var(--shadow-medium);
+        }
+        
         .hero h2 {
-            font-size: 3rem;
-            margin: 0.5rem 0;
-            color: #5B4636;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin: 1rem 0;
+            color: var(--text-primary);
+            font-weight: 800;
+            text-shadow: 0 4px 8px var(--shadow-light);
+            letter-spacing: -0.02em;
         }
+        
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             max-width: 600px;
             margin: 0 auto;
-            color: #5B4636;
-        }
-        .container {
+            color: var(--text-secondary);
+            font-weight: 400;
+            opacity: 0.9;
+        }        .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 4rem auto;
+            padding: 0 2rem;
         }
+        
+        .section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        
         .mission {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #ffffff; /* Keep mission sections bright but still warm */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            background: var(--white-warm);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px var(--shadow-light);
+            border: 1px solid rgba(212, 165, 116, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
+        
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-bg));
+        }
+        
+        .mission:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px var(--shadow-medium);
+        }
+        
         .mission h3 {
             margin-top: 0;
-            color: #5B4636;
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        
+        .mission p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
         }
+        
+        .mission em {
+            display: block;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--hero-bg);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+            font-style: normal;
+            color: var(--text-secondary);
+        }        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
         .feature {
-            flex: 1 1 300px;
-            padding: 1rem;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            background: var(--white-warm);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px var(--shadow-light);
+            border: 1px solid rgba(212, 165, 116, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px var(--shadow-medium);
+        }
+        
         .feature h4 {
             margin-top: 0;
-            color: #5B4636;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
-        .confidential {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+        .feature p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }        .confidential {
+            padding: 2.5rem;
+            background: var(--white-warm);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px var(--shadow-light);
+            border: 1px solid rgba(212, 165, 116, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
+        
+        .confidential::before {
+            content: '🔒';
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+        
+        .confidential:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px var(--shadow-medium);
+        }
+        
         .confidential h3 {
             margin-top: 0;
-            color: #5B4636;
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
+        
+        .confidential p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        
         footer {
-            background-color: #E9DAC6;
+            background: var(--gradient-warm);
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-            color: #5B4636;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+                min-height: 70vh;
+            }
+            
+            .container {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .mission, .confidential {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animation */
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        /* Pixel-perfect rendering for images */
+        img {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
         }
     </style>
 </head>
@@ -129,18 +402,18 @@
                 <li><a href="#confidential">Confidentiality</a></li>
             </ul>
         </nav>
-    </header>
-
-    <section class="hero" id="home">
-        <!-- 500x500 Icon Placeholder -->
-        <img src="Logo.jpg" alt="Chai Time Icon" class="hero-icon" />
-        <h2>Welcome to Chai Time</h2>
-        <p>An AI-driven virtual therapy experience in a cozy café setting.</p>
+    </header>    <section class="hero" id="home">
+        <div class="hero-content">
+            <!-- 500x500 Icon Placeholder -->
+            <img src="Logo.jpg" alt="Chai Time Icon" class="hero-icon" />
+            <h2>Welcome to Chai Time</h2>
+            <p>An AI-driven virtual therapy experience in a cozy café setting.</p>
+        </div>
     </section>
 
     <div class="container">
         <!-- Mission Statement -->
-        <section class="mission" id="mission">
+        <section class="mission section" id="mission">
             <h3>Our Mission</h3>
             <p>
                 At <strong>Chai Time</strong>, our mission is to break down traditional therapy barriers such as cost and stigma
@@ -148,11 +421,11 @@
                 with our friendly panda barista, all at minimal or no cost.
             </p>
             <!-- Mission Statement Template -->
-            <p><em>"[Insert personalized statement here about how your cafe fosters well-being and empowerment]"</em></p>
+            <em>"Creating a warm, welcoming digital space where mental wellness meets the comfort of your favorite café, fostering healing through compassionate AI companionship."</em>
         </section>
 
         <!-- Key Features -->
-        <section class="features" id="features">
+        <section class="features section" id="features">
             <!-- Feature 1: AI-driven therapy -->
             <div class="feature">
                 <h4>AI-driven Virtual Therapy</h4>
@@ -175,10 +448,8 @@
                 <p>We aim to reduce barriers like cost, stigma, and geographic limitations by providing immediate, on-demand
                    help in a welcoming, game-like setting.</p>
             </div>
-        </section>
-
-        <!-- Confidentiality Info -->
-        <section class="confidential" id="confidential">
+        </section>        <!-- Confidentiality Info -->
+        <section class="confidential section" id="confidential">
             <h3>Privacy & Confidentiality</h3>
             <p>
                 Chai Time prioritizes user privacy. We do not store or log your conversations on any database. This helps ensure
