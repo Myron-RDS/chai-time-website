@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai Time - AI-Powered Therapy Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Chai Time - AI-Powered Therapy Game</title>    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
     <style>
         /* Modern Cozy Cafe Design with Pixel Art Warmth */
         :root {
@@ -83,14 +83,25 @@
             border-radius: 25px;
             transition: all 0.25s ease;
             position: relative;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        nav a:hover {
+        nav a i {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: all 0.25s ease;
+        }        nav a:hover {
             background: var(--white-warm);
             box-shadow: 0 4px 15px var(--shadow-medium);
             transform: translateY(-2px);
             color: var(--text-primary);
+        }
+
+        nav a:hover i {
+            opacity: 1;
+            transform: scale(1.1);
         }
 
         nav a:active {
@@ -276,14 +287,21 @@
         .feature:hover {
             transform: translateY(-8px);
             box-shadow: 0 16px 48px var(--shadow-medium);
-        }
-
-        .feature h4 {
+        }        .feature h4 {
             margin-top: 0;
             color: var(--text-primary);
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .feature h4 i {
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            opacity: 0.8;
         }
 
         .feature p {
@@ -393,13 +411,12 @@
 
 <body>
     <header>
-        <h1>Chai Time</h1>
-        <nav>
+        <h1>Chai Time</h1>        <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#confidential">Confidentiality</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#mission"><i class="fas fa-heart"></i>Mission</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i>Features</a></li>
+                <li><a href="#confidential"><i class="fas fa-shield-alt"></i>Confidentiality</a></li>
             </ul>
         </nav>
     </header>    <section class="hero" id="home">
@@ -425,26 +442,24 @@
         </section>
 
         <!-- Key Features -->
-        <section class="features section" id="features">
-            <!-- Feature 1: AI-driven therapy -->
+        <section class="features section" id="features">            <!-- Feature 1: AI-driven therapy -->
             <div class="feature">
-                <h4>AI-driven Virtual Therapy</h4>
+                <h4><i class="fas fa-robot"></i>AI-driven Virtual Therapy</h4>
                 <p>Interact with our panda barista in a dynamic, conversational game to help manage anxiety and improve mood.</p>
             </div>
             <!-- Feature 2: Conversation Confidentiality -->
             <div class="feature">
-                <h4>Confidential Conversations</h4>
+                <h4><i class="fas fa-user-secret"></i>Confidential Conversations</h4>
                 <p>Rest assured, all chats remain private and are not stored in any database.</p>
-            </div>
-            <!-- Feature 3: Free up to a certain usage -->
+            </div>            <!-- Feature 3: Free up to a certain usage -->
             <div class="feature">
-                <h4>Free Tier</h4>
+                <h4><i class="fas fa-coffee"></i>Free Tier</h4>
                 <p>Enjoy the core features at no cost up to a certain usage limit. Affordable premium plans are available for
                    extended features and more in-depth sessions.</p>
             </div>
             <!-- Feature 4: Breaking Down Therapy Barriers -->
             <div class="feature">
-                <h4>Accessible, Stigma-Free Therapy</h4>
+                <h4><i class="fas fa-hands-helping"></i>Accessible, Stigma-Free Therapy</h4>
                 <p>We aim to reduce barriers like cost, stigma, and geographic limitations by providing immediate, on-demand
                    help in a welcoming, game-like setting.</p>
             </div>
